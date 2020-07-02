@@ -1146,8 +1146,23 @@
         "signature": "3293b0d1d6a7f902316e164fcf36ae099f1bbb0224484586eaab30d9dea78d32",
         "affectsGlobalScope": false
       },
+      "../src/http/http.controller.ts": {
+        "version": "18e5c8c10892e570d127d46c373db3e1011a0df2aea963c7881494bcf7ac9138",
+        "signature": "ce680c5c903e4dcb1f880e2747d6672b6a71c16bd8a30801a736ef119675ff45",
+        "affectsGlobalScope": false
+      },
+      "../src/http/http.service.ts": {
+        "version": "970b634583edd716129fbdfe84689e987120073d8cb74ed706c978b605b9a61d",
+        "signature": "26231b1103d3676558a62fed37e13aa19e726a166c4c9b3e6ce77b613a764f21",
+        "affectsGlobalScope": false
+      },
+      "../src/http/http.module.ts": {
+        "version": "96494d7848216713d5279cff1d39a26e87cc16dbd96907917c099026f3ac33e6",
+        "signature": "d8859ee585b17b2b6412684b67e71af772eef103c1b05dadd43c3fbda4b513d4",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "21366ae45455c42843d8032071a2805cf96f8414b4690ff4ee5e678f5790583c",
+        "version": "115c9655ed57324d5513c047aba2046c0615cddee1f956f0c0bc0f021c239108",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -1332,7 +1347,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "3c8967198a459fe0868276c735fb4ecbe75c3ed2bbda02d4dcee787c5c448528",
+        "version": "b24d7c66c6df71e9b24c02f098d4356f5c2d948f0433dc10b6118a252e6c31ea",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -5106,10 +5121,35 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/app.controller.ts",
-        "../src/app.service.ts"
+        "../src/app.service.ts",
+        "../src/http/http.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/http/http.controller.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/http/http.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/http/http.controller.ts",
+        "../src/http/http.service.ts"
+      ],
+      "../src/http/http.service.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -8735,6 +8775,9 @@
       "../src/app.controller.ts",
       "../src/app.module.ts",
       "../src/app.service.ts",
+      "../src/http/http.controller.ts",
+      "../src/http/http.module.ts",
+      "../src/http/http.service.ts",
       "../src/main.ts"
     ]
   },
