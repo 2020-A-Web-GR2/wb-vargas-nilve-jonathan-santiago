@@ -10,8 +10,13 @@ async function bootstrap() {
   /*
   * antes de APP.LISTEN() se debe agregar la conf
   * */
+//utilizar cookies
+//app.use(cookieParser())
 
-  app.use(cookieParser())
+//utilizar cookies firmadas
+app.use(cookieParser('IamyourFather!'));
+
+
   await app.listen(3001);
 }
 bootstrap();

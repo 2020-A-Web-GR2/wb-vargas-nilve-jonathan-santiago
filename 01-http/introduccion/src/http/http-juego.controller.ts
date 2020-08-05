@@ -124,7 +124,7 @@ export class HttpJuegoController {
     guardarCookieInsegura(
         @Query() parametrosConsulta,
         @Req() req, //obtener solicitud
-        @Res() res //obtener respuesta
+        @Res() res //obtener respuesta -> no se utiliza el return
     ){
 
         res.cookie(
@@ -136,6 +136,51 @@ export class HttpJuegoController {
         }
         res.send(mensaje)
     }
+
+    //COOKIE SEGURA
+    @Get('guardarCookieSegura')
+    guardarCookieSegura(
+        @Query() parametrosConsulta,
+        @Req() req, //obtener solicitud
+        @Res() res //obtener respuesta -> no se utiliza el return -> enviamos la cookie.
+    ){
+
+        res.cookie(
+            'galletaSegura',//nombre de la cookie
+            'web :3' ,  //valor de la cookie,
+            {
+                secure:true
+            }
+        );
+        const mensaje = {
+            mensaje:'ok'
+        }
+        res.send(mensaje)
+    }
+
+    @Get('mostrarCookies')
+    mostrarCookies(@Req() req){
+        const mensaje ={
+            sinFirmar:req.cookies,
+            firmadas:req.signedCookies
+        }
+        return mensaje
+    }
+
+    @Get('guardarCookieFirmada')
+    public guardarCookieFirmada(
+        @Res() res
+    ){
+        res.cookie('firmada','poliburguer',{signed:true})
+        res.cookie('firmada1','poliburguer1',{signed:true})
+        const mensaje ={
+            mensaje:'Ok'
+        }
+        res.send(mensaje)
+    }
+
+//VALIDACIONES PRIMER PARTE DE LA CALCULADORA -> BAD REQUEST
+
 
 
 
