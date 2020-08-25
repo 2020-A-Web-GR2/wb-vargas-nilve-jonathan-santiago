@@ -1,13 +1,11 @@
-import {Column, Entity, Index, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, Index, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {MascotaEntity} from "../mascota/mascota.entity";
 
 //index compuesto
 //validara que el nombre, apellido y cedula sean unicos
 
-@Index(['nombre','apellido','cedula'],
-    {unique:true})
-
-
-
+// @Index(['nombre','apellido','cedula'],
+//     {unique:true})
 @Index([//en q columna nosotros queremos tener indices
     //aqui se especifica el nombre de las propiedades de la clase
     'nombre',
@@ -68,10 +66,24 @@ export class UsuarioEntity {
     })
     fechaNacimiento?:string;
 
-    // @Column({
-    //     nullable:true,
-    //     type:''
-    // })
+    @Column({
+        nullable:true,
+        type:'datetime',
+        name:'fecha_hora_nacimiento'
+    })
+    fechaHoraNacimiento?:string;
+
+
+    //relaciones usuario -> mascota
+    @OneToMany(type=>MascotaEntity,
+        //que entidad nos relacionamos
+        mascota => mascota.usuario
+        //campo con el q relacionamos
+    )
+    mascotas:MascotaEntity[]
+
+
+
 
 
 

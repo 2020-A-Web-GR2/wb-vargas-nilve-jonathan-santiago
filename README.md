@@ -19,9 +19,49 @@ $ nest new project-name
 ```
 $ npm run start:dev
 ```
-
-##instalacion de TypeORM 
+-------------------------------------------------------------------------------------------------------------------------------------------
+###TypeORM --> para conectarse a db
 https://typeorm.io/#/
 
-###configuraciones de typeORM con mysql
+###instalacion de TypeORM --> para conectarse a db
+#configuraciones de typeORM con mysql
 https://docs.nestjs.com/techniques/database
+
+IMPORTANTE -> se debe definir el nombre de la tabla siempre con letras MINUSCULAS
+```
+@Entity('usuario')
+```
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+###class-validator --> para las validaciones
+https://github.com/typestack/class-validator
+```
+npm install class-validator --save
+```
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Instalar EJS
+
+```
+$npm install ejs
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

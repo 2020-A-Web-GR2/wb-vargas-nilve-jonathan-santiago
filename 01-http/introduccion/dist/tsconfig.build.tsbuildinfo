@@ -1986,11 +1986,6 @@
         "signature": "23d4e350820cadd40044de6c8dc00d94f3eafb7ab38f74faec16d43f77677393",
         "affectsGlobalScope": false
       },
-      "../src/usuario/usuario.controller.ts": {
-        "version": "c4ee6eab893bbf28991841dba05337c5d97bfb802a0cb392c5b1589a9d62fc02",
-        "signature": "2d1dc125f5fe61fb92f27b45975c6b2d4fe6141ac9c024237217123ad66d2429",
-        "affectsGlobalScope": false
-      },
       "../node_modules/typeorm/schema-builder/options/tablecolumnoptions.d.ts": {
         "version": "222ebf19b1260582fd2023a65c5b7da77f730021f05afb9c4ead4b0b339a8c98",
         "signature": "222ebf19b1260582fd2023a65c5b7da77f730021f05afb9c4ead4b0b339a8c98",
@@ -3296,23 +3291,63 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/vacuna/vacuna.entity.ts": {
+        "version": "9a2e01ec9cd7e27e92faff6f5dccc3f463d39610a2df2ee97a8f60a574dc43c5",
+        "signature": "31f2167a6d2428c1589d7bed2382deb8561e1a58e8b2b3a3ab01b80b7e26ea75",
+        "affectsGlobalScope": false
+      },
+      "../src/mascota/mascota.entity.ts": {
+        "version": "3b0180e1593fc233892b612f4b022bac51bb100368bf2ce36277ce29cb3d03e2",
+        "signature": "d466331d6d6b6d7a8b5c43d75286f2168d453d958d646facef9bb1a42504f1e1",
+        "affectsGlobalScope": false
+      },
       "../src/usuario/usuario.entity.ts": {
-        "version": "73e47cb79654bd8b21ccd3135d45e69a50621ee815a0339ff2f92d82a1e47246",
-        "signature": "2812fd10a54d315ae72ef899a2f5df1365a887b97cbb7068ef8d3080e4be5831",
+        "version": "8ae3acbc517569d4e9d0ec76d03f97eedfbae97f650d575b1991a543e372574d",
+        "signature": "8840bde995c3480b2c0e2f44e3495f51d4c07a4b580155886969a04adce2cb55",
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.service.ts": {
-        "version": "d0ad869e03452d499a13cc5beaa53ebddf0193f91c3729d8ae5c15438f74ff02",
-        "signature": "7b4b74be43f7f2432de2f9deff9f38aaca44519f98d1d361f3d3542f5e39fb1a",
+        "version": "eb7cde950defc37b915d09936c76c31976853b4e6def03f21756d4e73c4cb02f",
+        "signature": "ba44e39e9f9f8345976f63769ebedde05ff3b135c65414ecdffb6289b5b0d54e",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/dto/usuario.create-dto.ts": {
+        "version": "e55a5409375685eb52b5a3fb555304f19bbd399cd17a07bd534d63b2773ff6d7",
+        "signature": "569af7377cace8af49f7bb9181ff6ca6ae08ba7b6ee80773ad00c20248beb0b0",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/dto/usuario.update-dto.ts": {
+        "version": "1836c8d710c561518789eafb3a4e63445af32a068e3e0f94553d31eb8706f34c",
+        "signature": "53df3ba7618869eabfb1a30407263540035ef2830f6ae4173de6182f733ca151",
+        "affectsGlobalScope": false
+      },
+      "../src/mascota/mascota.service.ts": {
+        "version": "c500b30e6019d5ca31e29eff402b9329695e3cfc34d24eecd1db99033279b838",
+        "signature": "fb89782ff09793ac191a30b46466a29d2b1ab87e629e6296125f4c2336fade7a",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/usuario.controller.ts": {
+        "version": "fff5d412b2bf5024641bbcf7671ed10c52daa23e4eb3eb405387a5622d6b7b79",
+        "signature": "3914628639672641900875976264beb338b166c9c162865182f10a095805fff2",
+        "affectsGlobalScope": false
+      },
+      "../src/mascota/mascota.module.ts": {
+        "version": "acbaeb935e0219acc18466848a43a234307a467e375e12cd206d875891b19c97",
+        "signature": "408b61b8cf2bbe86deb4721e25a915d73716321fa45fa7636d3b4257f1d86dc7",
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.module.ts": {
-        "version": "ce1fd4426f7a2bb8ecdf330ecd70bb17394af5104df847ec28dffc1dd39e9384",
+        "version": "b42fdbbd06eb0ec58cf6caae4a2ecb5a86795bb53cfca363d5a02445098c83b0",
         "signature": "0abd7e5271059d7ef398c56b5a7be40e08cec1cbb7af29da0e90e8c8bcf2cf59",
         "affectsGlobalScope": false
       },
+      "../src/vacuna/vacuna.module.ts": {
+        "version": "099358bc9a70124606e270fd716e3667094f15e654e79b1c2cd6c8bab2aa0161",
+        "signature": "23350d58d72f22a62824505263be844b66effe6724126d51cea07d628ad0bf8f",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "9b00bb507ad877d9f78afce990cbc32f99da15080ba352b89cdc7b2b79a7c9bf",
+        "version": "e2e30b19a1f8611246bd25248a9faa58b43864fb97f7c2cbc56abcf1cf2c805b",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -3497,7 +3532,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "551d056c39fbb9221a2a87c349b6ae70446f4741029c163f3aead6eae04c32cd",
+        "version": "2db5736b47162a8de3a104288c68451bbbe095f4550353172cd926f2b64669c7",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -11337,8 +11372,12 @@
         "../src/app.service.ts",
         "../src/calculadora/calculadora.module.ts",
         "../src/http/http-juego.module.ts",
+        "../src/mascota/mascota.entity.ts",
+        "../src/mascota/mascota.module.ts",
         "../src/usuario/usuario.entity.ts",
-        "../src/usuario/usuario.module.ts"
+        "../src/usuario/usuario.module.ts",
+        "../src/vacuna/vacuna.entity.ts",
+        "../src/vacuna/vacuna.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -11410,13 +11449,66 @@
         "../node_modules/@types/node/util.d.ts",
         "../src/app.module.ts"
       ],
+      "../src/mascota/mascota.entity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/usuario/usuario.entity.ts",
+        "../src/vacuna/vacuna.entity.ts"
+      ],
+      "../src/mascota/mascota.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/mascota/mascota.entity.ts",
+        "../src/mascota/mascota.service.ts"
+      ],
+      "../src/mascota/mascota.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/mascota/mascota.entity.ts"
+      ],
+      "../src/usuario/dto/usuario.create-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/usuario/dto/usuario.update-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
       "../src/usuario/usuario.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/mascota/mascota.service.ts",
+        "../src/usuario/dto/usuario.create-dto.ts",
+        "../src/usuario/dto/usuario.update-dto.ts",
+        "../src/usuario/usuario.service.ts"
       ],
       "../src/usuario/usuario.entity.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -11424,7 +11516,8 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/typeorm/index.d.ts"
+        "../node_modules/typeorm/index.d.ts",
+        "../src/mascota/mascota.entity.ts"
       ],
       "../src/usuario/usuario.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -11434,6 +11527,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../src/mascota/mascota.module.ts",
         "../src/usuario/usuario.controller.ts",
         "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.service.ts"
@@ -11448,6 +11542,25 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/usuario/usuario.entity.ts"
+      ],
+      "../src/vacuna/vacuna.entity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/mascota/mascota.entity.ts"
+      ],
+      "../src/vacuna/vacuna.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/vacuna/vacuna.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -18753,9 +18866,29 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
+      "../src/mascota/mascota.entity.ts": [
+        "../src/usuario/usuario.entity.ts",
+        "../src/vacuna/vacuna.entity.ts"
+      ],
+      "../src/mascota/mascota.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/mascota/mascota.entity.ts"
+      ],
+      "../src/usuario/usuario.controller.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/mascota/mascota.service.ts",
+        "../src/usuario/usuario.entity.ts",
+        "../src/usuario/usuario.service.ts"
+      ],
+      "../src/usuario/usuario.entity.ts": [
+        "../src/mascota/mascota.entity.ts"
+      ],
       "../src/usuario/usuario.service.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/usuario/usuario.entity.ts"
+      ],
+      "../src/vacuna/vacuna.entity.ts": [
+        "../src/mascota/mascota.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -19555,10 +19688,17 @@
       "../src/http/http-juego.module.ts",
       "../src/http/http-juego.service.ts",
       "../src/main.ts",
+      "../src/mascota/mascota.entity.ts",
+      "../src/mascota/mascota.module.ts",
+      "../src/mascota/mascota.service.ts",
+      "../src/usuario/dto/usuario.create-dto.ts",
+      "../src/usuario/dto/usuario.update-dto.ts",
       "../src/usuario/usuario.controller.ts",
       "../src/usuario/usuario.entity.ts",
       "../src/usuario/usuario.module.ts",
-      "../src/usuario/usuario.service.ts"
+      "../src/usuario/usuario.service.ts",
+      "../src/vacuna/vacuna.entity.ts",
+      "../src/vacuna/vacuna.module.ts"
     ]
   },
   "version": "3.9.5"
