@@ -1,0 +1,50 @@
+<%- include('../compartido/estilos-generales/estilos-generales-component')  %>
+<%- include('../compartido/menu/menu-component')  %>
+
+
+<h1>Crear Usuario</h1>
+
+
+<!--<form action="https://www.google.com" method="GET">-->
+
+<!--    <label for="query">Consulta:</label>-->
+<!--    <input id="query" type="text" name="q">-->
+
+<!--</form>-->
+
+<% if(error !=undefined){%>
+    <p>MENSAJE ERROR: <%= error %></p>
+<%}%>
+
+<form action="/usuario/crearDesdeVista" method="post">
+
+    <% const existeNombre = typeof nombre !== 'undefined' %>
+
+    <label for="nombreID">Nombre</label>
+    <input id="nombreID" type="text" name="nombre" value="<%= existeNombre ? nombre : '' %>">
+
+    <br>
+    <% const existeApellido = typeof apellido !== 'undefined' %>
+
+    <label for="apellidoID">Apellido</label>
+    <input id="apellidoID" type="text" name="apellido" value="<%= existeApellido ? apellido : '' %>">
+
+    <br>
+    <% const existeCedula = typeof cedula !== 'undefined' %>
+
+    <label for="cedulaID">Cedula</label>
+    <input id="cedulaID" type="text" name="cedula" value="<%= existeCedula ? cedula : '' %>">
+
+    <br>
+
+
+    <button type="submit">SUBMIT</button>
+    <button type="reset">RESET</button>
+    <button type="button">BUTTON</button>
+
+<!--    que tipo de boton es cuando no se pone el type es SUBMIT-->
+
+
+</form>
+
+<%- include('../compartido/funcionalidad-general/funcionalidad-general-component')  %>

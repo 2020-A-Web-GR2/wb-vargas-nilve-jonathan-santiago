@@ -1,0 +1,86 @@
+<%- include('../compartido/estilos-generales/estilos-generales-component')  %>
+<%- include('../compartido/menu/menu-component')  %>
+
+<!--<h1>Inicio</h1>-->
+
+<!--<button onclick="mensajeAlertar()">-->
+<!--    Alertar-->
+<!--</button>-->
+
+
+<!--<%- include('../compartido/funcionalidad-general/funcionalidad-general-component')  %>-->
+
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+
+<% const jona = {nombre:'Jonathan',apellido:'Vargas',cedula:'1725116139'}%>
+<% const numero = 25%>
+<% const mensaje = "Hola"%>
+
+<p><%= jona.nombre%> <%=jona.apellido%> </p>
+<p><%= numero %></p>
+<p><%= mensaje %></p>
+
+<% const arregloNumero = [1,2,3,4,5]%>
+<ul>
+
+    <% arregloNumero.forEach((valorActual, index)=>{%>
+        <li><%=valorActual%></li>
+    <%})%>
+
+
+</ul>
+<a href="/usuario/vista/crear">
+    <button>Crear</button>
+</a>
+
+<table>
+<!--    table row-->
+    <tr>
+
+<!--        table header-->
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cedula</th>
+        <th>Acciones</th>
+    </tr>
+
+    <tr>
+
+<!--        table detail-->
+<!--        <td>Jona</td>-->
+<!--        <td>Vargas</td>-->
+<!--        <td>1725116139</td>-->
+
+        <% arregloUsuarios.forEach((objeto)=>{%>
+            <tr>
+                <td><%= objeto.nombre %></td>
+                <td><%= objeto.apellido %></td>
+                <td><%= objeto.cedula %></td>
+                <td>
+                    <button>Ver</button>
+                    <button>Editar</button>
+                    <form action="/usuario/eliminarDesdeVista/<%= objeto.id%>" method="post">
+                        <button type="submit">Eliminar</button>
+                    </form>
+
+                </td>
+
+            </tr>
+
+        <%})%>
+
+
+    </tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+

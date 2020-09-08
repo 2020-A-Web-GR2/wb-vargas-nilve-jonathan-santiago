@@ -3327,8 +3327,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "fff5d412b2bf5024641bbcf7671ed10c52daa23e4eb3eb405387a5622d6b7b79",
-        "signature": "3914628639672641900875976264beb338b166c9c162865182f10a095805fff2",
+        "version": "e4256ff2e043f217197af48709f7dcdd5f767b0ee48681aa50884767829f0001",
+        "signature": "e60a3704fccf107c9b62aa7129d0ee6751d70c7eee1d3b4502b49f604f1744ec",
         "affectsGlobalScope": false
       },
       "../src/mascota/mascota.module.ts": {

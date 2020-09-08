@@ -36,7 +36,7 @@ IMPORTANTE -> se debe definir el nombre de la tabla siempre con letras MINUSCULA
 ###class-validator --> para las validaciones
 https://github.com/typestack/class-validator
 ```
-npm install class-validator --save
+$npm install class-validator --save
 ```
 
 
