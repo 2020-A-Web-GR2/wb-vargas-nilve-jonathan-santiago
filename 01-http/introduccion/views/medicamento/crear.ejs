@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/estilos.css">
+
+
+<div class='container'>
+
+    <%const existeMedicamento = typeof medicamento != 'undefined'%>
+
+    <br>
+    <h1><%= existeMedicamento? 'Editar Medicamento':'Crear Medicamento'%></h1>
+    <hr>
+
+    <% let existeNombre = typeof nombre !== 'undefined' %>
+    <% let existeDescripcion = typeof descripcion !== 'undefined' %>
+    <% let existePrecio = typeof precio !== 'undefined'%>
+    <% let existeCantidadUnid = typeof cantidadUnidades !== 'undefined' %>
+    <% let existeFecha = typeof fechaCaducidad !== 'undefined' %>
+
+
+    <%if(existeMedicamento){%>
+        <%existeNombre = true%>
+        <%existeDescripcion = true%>
+        <%existePrecio = true%>
+        <%existeCantidadUnid = true%>
+        <%existeFecha = true%>
+
+        <%nombre = medicamento.nombre%>
+        <%descripcion = medicamento.descripcion%>
+        <%precio = medicamento.precio%>
+        <%cantidadUnidades = medicamento.cantidadUnidades%>
+        <%fechaCaducidad = medicamento.fechaCaducidad%>
+    <%}%>
+
+    <%if(mensaje != undefined){%>
+        <div class="alert alert-danger" role="alert">
+            Mensaje Error: <%= mensaje%>
+        </div>
+    <%}%>
+
+    <form action="<%= existeMedicamento? '/medicamento/editar/'+medicamento.id:'/medicamento/crear'%>"
+          class="tamanio" method="post">
+
+        <div class="form-group">
+            <label for="nombreId">Nombre</label>
+            <input type="text" id="nombreId" class="form-control"
+                   name="nombre" value="<%= existeNombre? nombre:''%>">
+        </div>
+
+        <div class="form-group">
+            <label for="descripcionId">Descripcion del Medicamento</label>
+            <textarea class="form-control" id="descripcionId"
+                      rows="3"
+                      name="descripcion"><%= existeDescripcion? descripcion:''%>
+            </textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="cantidadUnidadId">Cantidad Unidades</label>
+            <input type="text" id="cantidadUnidadId"
+                   name="cantidadUnidades"
+                   class="form-control"
+                   placeholder="100 mg,l,ml,g"
+                   value="<%= existeCantidadUnid? cantidadUnidades:''%>">
+        </div>
+
+        <div class="form-group">
+            <label for="precioId">Precio</label>
+            <input type="text" id="precioId" name="precio"
+                   class="form-control"
+                   value="<%= existePrecio? Number(precio).toFixed(2):''%>">
+        </div>
+
+        <div class="form-group">
+            <label for="fechaCaducidadId">Fecha de Caducidad</label>
+            <input type="date" name="fechaCaducidad"
+                   id="fechaCaducidadId"
+                   class="form-control"
+                   value="<%= existeFecha? fechaCaducidad:''%>">
+        </div>
+
+
+        <button type="submit" class="btn btn-outline-primary" name="crear">
+            <%=existeMedicamento? 'Editar':'Crear'%>
+        </button>
+        <a href="/medicamento" role="button" class="btn btn-outline-danger">Cancelar</a>
+
+    </form>
+
+</div>
+
+
+<script src="/js/bootstrap.min.js"></script>

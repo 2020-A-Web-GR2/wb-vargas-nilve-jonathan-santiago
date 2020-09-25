@@ -10,6 +10,9 @@ import {MascotaModule} from "./mascota/mascota.module";
 import {VacunaModule} from "./vacuna/vacuna.module";
 import {MascotaEntity} from "./mascota/mascota.entity";
 import {VacunaEntity} from "./vacuna/vacuna.entity";
+import {MedicamentoEntity} from "./medicamento/medicamento.entity";
+import {MedicamentoModule} from "./medicamento/medicamento.module";
+import {LoginModule} from "./login/login.module";
 
 @Module({
   imports: [
@@ -20,6 +23,8 @@ import {VacunaEntity} from "./vacuna/vacuna.entity";
       UsuarioModule,
       MascotaModule,
       VacunaModule,
+      MedicamentoModule,
+      LoginModule,
       TypeOrmModule.forRoot({
           name:'default', //nombre de la conexion
           type: 'mysql', //mysql postgress
@@ -31,7 +36,8 @@ import {VacunaEntity} from "./vacuna/vacuna.entity";
           entities: [//TODAS LAS ENTIDADES Q VAMOS A USAR
               UsuarioEntity,
               MascotaEntity,
-              VacunaEntity
+              VacunaEntity,
+              MedicamentoEntity
           ],
           synchronize: true,
           dropSchema:false, // eliminar datos y el esquema de la base de datos

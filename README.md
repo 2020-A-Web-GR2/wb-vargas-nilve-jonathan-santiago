@@ -49,9 +49,36 @@ $npm install ejs
 ```
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ESTILOS
+
+por id
+
+<h1 id="rojo"></h1>
+
+#rojo {
+}
+
+por etiqueta
+
+h1{
+}
+
+por clase
+.verde{
+}
+
+Importancia
+
+style > id > clase > etiqueta
 
 
-
+Modelo de cajas
+	
+	-margin
+	-border
+	-padding
+	-elemento
 
 
 

@@ -2,9 +2,6 @@
 <%- include('../compartido/menu/menu-component')  %>
 
 
-<h1>Crear Usuario</h1>
-
-
 <!--<form action="https://www.google.com" method="GET">-->
 
 <!--    <label for="query">Consulta:</label>-->
@@ -12,28 +9,51 @@
 
 <!--</form>-->
 
+
+<% const existeUsuario = typeof usuario != 'undefined'%>
+
+<% let existeNombre = typeof nombre !== 'undefined' %>
+<% let existeApellido = typeof apellido !== 'undefined' %>
+<% let existeCedula = typeof cedula !== 'undefined' %>
+
+<h1><%= existeUsuario ? 'Editar ':'Crear '%>usuario</h1>
+
+<%if(existeUsuario){%>
+    <%existeNombre = true%>
+    <%existeApellido = true%>
+    <%existeCedula = true%>
+
+    <%nombre = usuario.nombre%>
+    <%apellido = usuario.apellido%>
+    <%cedula = usuario.cedula%>
+
+<%}%>
+
 <% if(error !=undefined){%>
     <p>MENSAJE ERROR: <%= error %></p>
 <%}%>
 
-<form action="/usuario/crearDesdeVista" method="post">
+<form action="<%= existeUsuario ? '/usuario/editarDesdeVista/'+usuario.id:'/crearDesdeVista/'%>" method="post">
 
-    <% const existeNombre = typeof nombre !== 'undefined' %>
 
     <label for="nombreID">Nombre</label>
     <input id="nombreID" type="text" name="nombre" value="<%= existeNombre ? nombre : '' %>">
 
     <br>
-    <% const existeApellido = typeof apellido !== 'undefined' %>
 
     <label for="apellidoID">Apellido</label>
     <input id="apellidoID" type="text" name="apellido" value="<%= existeApellido ? apellido : '' %>">
 
     <br>
-    <% const existeCedula = typeof cedula !== 'undefined' %>
 
     <label for="cedulaID">Cedula</label>
-    <input id="cedulaID" type="text" name="cedula" value="<%= existeCedula ? cedula : '' %>">
+    <input id="cedulaID" type="text"
+           name="cedula"
+
+           <%if(existeUsuario){%>
+           disabled
+            <%}%>
+           value="<%= existeCedula ? cedula : '' %>">
 
     <br>
 

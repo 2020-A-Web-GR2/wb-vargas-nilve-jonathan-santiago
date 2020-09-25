@@ -19,6 +19,9 @@ const mascota_module_1 = require("./mascota/mascota.module");
 const vacuna_module_1 = require("./vacuna/vacuna.module");
 const mascota_entity_1 = require("./mascota/mascota.entity");
 const vacuna_entity_1 = require("./vacuna/vacuna.entity");
+const medicamento_entity_1 = require("./medicamento/medicamento.entity");
+const medicamento_module_1 = require("./medicamento/medicamento.module");
+const login_module_1 = require("./login/login.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -29,6 +32,8 @@ AppModule = __decorate([
             usuario_module_1.UsuarioModule,
             mascota_module_1.MascotaModule,
             vacuna_module_1.VacunaModule,
+            medicamento_module_1.MedicamentoModule,
+            login_module_1.LoginModule,
             typeorm_1.TypeOrmModule.forRoot({
                 name: 'default',
                 type: 'mysql',
@@ -40,7 +45,8 @@ AppModule = __decorate([
                 entities: [
                     usuario_entity_1.UsuarioEntity,
                     mascota_entity_1.MascotaEntity,
-                    vacuna_entity_1.VacunaEntity
+                    vacuna_entity_1.VacunaEntity,
+                    medicamento_entity_1.MedicamentoEntity
                 ],
                 synchronize: true,
                 dropSchema: false,

@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/estilos.css">
+
+<div class="container">
+
+    <br>
+    <div class="row">
+        <div class="col-sm-5">
+            <h1>Lista de Medicamentos</h1>
+
+        </div>
+        <div class="col-sm-7" align="right">
+            <h6>Bienvenido: <%=usuario%></h6>
+            <a href="/logout" role="button" class="btn btn-warning">
+                Logout
+            </a>
+        </div>
+
+    </div>
+    <hr>
+
+    <%if(mensaje){%>
+        <div class="alert alert-danger" role="alert">
+            Mensaje: <%= mensaje%>
+        </div>
+    <%}%>
+
+    <a href="/medicamento/vista/crear" role="button" class="btn btn-primary">Crear</a>
+
+    <br><br>
+
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad Unidad</th>
+            <th scope="col">Fecha de Caducidad</th>
+            <th scope="col">Opciones</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <%arregloMedicamentos.forEach((medicamento,index)=>{%>
+            <tr>
+                <td><%= index + 1%></td>
+                <td><%= medicamento.nombre%></td>
+                <td class="tamanio"><p>
+                        <%= medicamento.descripcion%>
+                    </p>
+                </td>
+                <td><%= Number(medicamento.precio).toFixed(2)%></td>
+                <td><%= medicamento.cantidadUnidades%></td>
+                <td><%= medicamento.fechaCaducidad%></td>
+                <td>
+
+                    <form action="/medicamento/eliminar/<%=medicamento.id%>" method="post">
+
+                        <a href="/medicamento/vista/editar/<%= medicamento.id%>"
+                           role="button" class="btn btn-success btn-sm btn-block">Editar</a>
+
+                        <button class="btn btn-danger btn-sm btn-block" type="submit">Eliminar</button>
+
+                    </form>
+
+
+
+
+                </td>
+
+            </tr>
+
+        <%})%>
+
+        </tbody>
+    </table>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>

@@ -1142,8 +1142,8 @@
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "3469c5aa62e1ba5b183d9bb9d40193e91aa761fc5734d332650b0bd49c346266",
-        "signature": "3293b0d1d6a7f902316e164fcf36ae099f1bbb0224484586eaab30d9dea78d32",
+        "version": "9a020dfa8d092cff472241965ff40552bd231ce074f8d8095c004e6e7847cf3e",
+        "signature": "7cf1c07acf1d99280489dcf0d772b9f2e2bec82aa79643983fe0d9dfb2884085",
         "affectsGlobalScope": false
       },
       "../node_modules/class-validator/types/validation/validationerror.d.ts": {
@@ -3307,8 +3307,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.service.ts": {
-        "version": "eb7cde950defc37b915d09936c76c31976853b4e6def03f21756d4e73c4cb02f",
-        "signature": "ba44e39e9f9f8345976f63769ebedde05ff3b135c65414ecdffb6289b5b0d54e",
+        "version": "b82051a6b505e395a9c3450e9368c357ddebe9837a7ef0ee2e14b10d5a0af005",
+        "signature": "210e48acbc947be0eec4be9ff0a13e88b54c8764017e86a8bb29f07a35068326",
         "affectsGlobalScope": false
       },
       "../src/usuario/dto/usuario.create-dto.ts": {
@@ -3327,8 +3327,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "e4256ff2e043f217197af48709f7dcdd5f767b0ee48681aa50884767829f0001",
-        "signature": "e60a3704fccf107c9b62aa7129d0ee6751d70c7eee1d3b4502b49f604f1744ec",
+        "version": "c94f0e488c0dc6812407165d89f330e7aad71c04573b232b604c23bb1641af43",
+        "signature": "a25ebc56f836e6e8660cdd1a017b4474f511e927d6f4ef30f3490e0052982508",
         "affectsGlobalScope": false
       },
       "../src/mascota/mascota.module.ts": {
@@ -3346,8 +3346,43 @@
         "signature": "23350d58d72f22a62824505263be844b66effe6724126d51cea07d628ad0bf8f",
         "affectsGlobalScope": false
       },
+      "../src/medicamento/medicamento.entity.ts": {
+        "version": "e2bbffc03bb99ee8ddd79c520bfac5d6a797efd02b63e04d603b47b3bc88f1ab",
+        "signature": "42224b1990edbe51322e2fd2138789709da685e11864e3fb663af0acf755288f",
+        "affectsGlobalScope": false
+      },
+      "../src/medicamento/medicamento.service.ts": {
+        "version": "97bda9a153392d80aa04790e9882fa83da01f16b07f0e27b24aa7e8c481d4b60",
+        "signature": "ddf44ee9c9e7eccc2c9764ad03cdf256463b93483164c0d456751d5e7c4aa195",
+        "affectsGlobalScope": false
+      },
+      "../src/medicamento/dto/medicamento.dto.ts": {
+        "version": "1a5af91f66bb02af7048043033b17df94cc78a86ecdd412161553d4f3cf48cbc",
+        "signature": "c962ad69ffe0e4aa801ff1317a1a1d848bf8e02fc9796c650f532ecd4232f03c",
+        "affectsGlobalScope": false
+      },
+      "../src/medicamento/medicamento.controller.ts": {
+        "version": "1690bad132e8bfaa54dfc4c928bcf35a9c028d00cb2cb380efea57e5f2304048",
+        "signature": "c63009e60f6cd3f89adb2da0ad009c8bd281ecc964cb8b848e68de0a798ade0f",
+        "affectsGlobalScope": false
+      },
+      "../src/medicamento/medicamento.module.ts": {
+        "version": "e2e60fd12e10f7f353078752c1390441262f401263419843bfed78bc3ab7b3f3",
+        "signature": "11f9709519a84dc549cefc5253255f97470d1cca4b5e8b05483b0eed46b04ee6",
+        "affectsGlobalScope": false
+      },
+      "../src/login/login.controller.ts": {
+        "version": "bbd09dae07626a2e1d68100fdaee055d564e8341416561436a2dd49f0465248e",
+        "signature": "89ca18c462830b0ae1609e06d09daf325917d7ec87e4cb54f5d13d7e938792ca",
+        "affectsGlobalScope": false
+      },
+      "../src/login/login.module.ts": {
+        "version": "9a745a0927d8c7a5c1b8495743f77e78d5f26cb2d6baaf479399e29674abbc77",
+        "signature": "0add91e5157ac2676f30ccd70f375b28ab4f5ceecedd8f902d757af4e3e9cb3d",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "e2e30b19a1f8611246bd25248a9faa58b43864fb97f7c2cbc56abcf1cf2c805b",
+        "version": "90b5f2cb88a4fff5b28e90dd6e212a63ef1ce722587f5f7228122e08652f27bd",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -3532,7 +3567,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "2db5736b47162a8de3a104288c68451bbbe095f4550353172cd926f2b64669c7",
+        "version": "dfe9b21fc9fd744540f446036552bedef49bcce85d44440a31e2048382b1ef50",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -11372,8 +11407,11 @@
         "../src/app.service.ts",
         "../src/calculadora/calculadora.module.ts",
         "../src/http/http-juego.module.ts",
+        "../src/login/login.module.ts",
         "../src/mascota/mascota.entity.ts",
         "../src/mascota/mascota.module.ts",
+        "../src/medicamento/medicamento.entity.ts",
+        "../src/medicamento/medicamento.module.ts",
         "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.module.ts",
         "../src/vacuna/vacuna.entity.ts",
@@ -11440,6 +11478,23 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
+      "../src/login/login.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/login/login.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/login/login.controller.ts"
+      ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -11481,6 +11536,57 @@
         "../node_modules/typeorm/index.d.ts",
         "../src/mascota/mascota.entity.ts"
       ],
+      "../src/medicamento/dto/medicamento.dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/medicamento/medicamento.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/medicamento/dto/medicamento.dto.ts",
+        "../src/medicamento/medicamento.service.ts"
+      ],
+      "../src/medicamento/medicamento.entity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../src/medicamento/medicamento.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/medicamento/medicamento.controller.ts",
+        "../src/medicamento/medicamento.entity.ts",
+        "../src/medicamento/medicamento.service.ts"
+      ],
+      "../src/medicamento/medicamento.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/medicamento/medicamento.entity.ts",
+        "../src/usuario/usuario.entity.ts"
+      ],
       "../src/usuario/dto/usuario.create-dto.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -11508,6 +11614,7 @@
         "../src/mascota/mascota.service.ts",
         "../src/usuario/dto/usuario.create-dto.ts",
         "../src/usuario/dto/usuario.update-dto.ts",
+        "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.service.ts"
       ],
       "../src/usuario/usuario.entity.ts": [
@@ -11540,6 +11647,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/find-options/findmanyoptions.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/usuario/usuario.entity.ts"
       ],
@@ -18874,6 +18982,14 @@
         "../node_modules/typeorm/index.d.ts",
         "../src/mascota/mascota.entity.ts"
       ],
+      "../src/medicamento/medicamento.controller.ts": [
+        "../src/medicamento/medicamento.service.ts"
+      ],
+      "../src/medicamento/medicamento.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/medicamento/medicamento.entity.ts",
+        "../src/usuario/usuario.entity.ts"
+      ],
       "../src/usuario/usuario.controller.ts": [
         "../node_modules/class-validator/types/index.d.ts",
         "../src/mascota/mascota.service.ts",
@@ -19687,10 +19803,17 @@
       "../src/http/http-juego.controller.ts",
       "../src/http/http-juego.module.ts",
       "../src/http/http-juego.service.ts",
+      "../src/login/login.controller.ts",
+      "../src/login/login.module.ts",
       "../src/main.ts",
       "../src/mascota/mascota.entity.ts",
       "../src/mascota/mascota.module.ts",
       "../src/mascota/mascota.service.ts",
+      "../src/medicamento/dto/medicamento.dto.ts",
+      "../src/medicamento/medicamento.controller.ts",
+      "../src/medicamento/medicamento.entity.ts",
+      "../src/medicamento/medicamento.module.ts",
+      "../src/medicamento/medicamento.service.ts",
       "../src/usuario/dto/usuario.create-dto.ts",
       "../src/usuario/dto/usuario.update-dto.ts",
       "../src/usuario/usuario.controller.ts",
