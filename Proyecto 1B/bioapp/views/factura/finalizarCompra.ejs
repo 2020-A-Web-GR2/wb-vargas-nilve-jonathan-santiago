@@ -1,0 +1,149 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<%const nombres = detallesFactura.usuario.nombre + ' ' + detallesFactura.usuario.apellido%>
+<%let cedula = detallesFactura.usuario.cedula%>
+<%let ciudad = detallesFactura.usuario.ciudad%>
+<%const numFactura = detallesFactura.id%>
+<%const fecha = detallesFactura.fechaHora.toLocaleString()%>
+<%const subtotal = Number(detallesFactura.precioTotal).toFixed(2)%>
+<%const iva = (subtotal * (12/100)).toFixed(2) %>
+<%const totalPagar = Number(detallesFactura.precioTotalConIVA).toFixed(2)%>
+
+
+<div class="container main-container">
+
+    <div class="card" style="width: 91.5%; height: 50%">
+
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-1"></div>
+
+                <div class="col-md-3">
+
+                    <h1><span class="badge badge-secondary">BioApp</span></h1>
+                    <img src="/img/bioapp.png" alt="logo bioapp" width="auto" height="40%">
+                    <br><br>
+                    <h5>Factura a: </h5>
+                    <h6>Nombre: <span class="badge badge-info"><%= nombres%></span></h6>
+                    <h6>Cedula: <span class="badge badge-info"><%= cedula%></span></h6>
+                    <h6>Ciudad: <span class="badge badge-info"><%= ciudad%></span></h6>
+
+                </div>
+
+                <div class="col-md-5"></div>
+                <div class="col-md">
+                    <h3><span class="badge badge-primary">FACTURA</span></h3>
+                    <p>Factura No: <span class="badge badge-success"><%= numFactura%></span></p>
+                    <p>Fecha: <span class="badge badge-success"><%= fecha%></span></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-11">
+
+            <div class="table-responsive-sm">
+
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr  align="center">
+                        <th scope="col">#</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio Unitario</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <%detallesFactura.detalles.forEach((objeto,index)=>{%>
+
+                        <tr align="center">
+                            <td><%= index + 1 %></td>
+                            <td> <%= objeto.descripcion%></td>
+                            <td><%= Number(objeto.precioUnitario).toFixed(2)%></td>
+                            <td><%= objeto.cantidad%></td>
+                            <td><%= Number(objeto.precioTotal).toFixed(2)%></td>
+                        </tr>
+
+                    <%})%>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <form class="was-validated" action="/bioapp/finalizar/factura/<%=detallesFactura.id%>" method="post">
+
+        <div class="row">
+
+                <div class="col-sm-3">
+
+                    <%if(detallesFactura.tipo === 'carrito'){%>
+
+                        <label for="tarjetaID">Tarjeta de Credito:</label>
+                        <select class="custom-select" name="tarjeta" id="tarjetaID" required>
+
+                            <option value="">Seleccione Tarjeta</option>
+                            <% detallesFactura.usuario.tarjetas_credito.forEach((tarjeta)=>{%>
+                                <option value="<%= tarjeta.numero%>"><%= tarjeta.numero%></option>
+                            <%})%>
+
+                        </select>
+
+
+                    <%}else{%>
+
+                            <label for="numeroTarjetaID">Tarjeta de Credito:
+                                <%=detallesFactura.tarjeta_credito.tipo%>
+                            </label>
+                            <input type="number"
+                                   name="numero" id="numeroTarjetaID"
+                                   class="form-control"
+                                   value="<%=detallesFactura.tarjeta_credito.numero%>"
+                                   disabled>
+
+                    <%}%>
+
+                    <%if(detallesFactura.usuario.tarjetas_credito.length === 0){%>
+                        <br>
+                        <div class="alert alert-danger" role="alert">
+                            Agregue tarjeta de credito
+                        </div>
+                    <%}%>
+                </div>
+
+
+            <div class="col-md-7" align="right">
+                <h6>SubTotal:</h6>
+                <h6>IVA (12%):</h6>
+                <h6>Total a Pagar:</h6>
+            </div>
+
+            <div class="col-sm-1">
+                <h6><span class="badge badge-pill badge-primary"><%= subtotal%></span></h6>
+                <h6><span class="badge badge-pill badge-primary"><%= iva%></span></h6>
+                <h6><span class="badge badge-pill badge-danger"><%= totalPagar%></span></h6>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div align="center">
+            <%if(detallesFactura.tipo === 'carrito'){%>
+                <button class="btn btn-primary margin-right" type="submit"> Finalizar Compra </button>
+            <%}%>
+                <a href="/bioapp/facturas"  role="button" class="btn btn-danger">Cancelar</a>
+
+        </div>
+
+    </form>
+</div>

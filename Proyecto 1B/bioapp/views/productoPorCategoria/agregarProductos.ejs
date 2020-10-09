@@ -1,0 +1,108 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+
+    <%const existeProducto = typeof producto != 'undefined'%>
+    <%let existeNombre = typeof nombre != 'undefined'%>
+    <%let existeDescripcion = typeof descripcion != 'undefined'%>
+    <%let existeImagen = typeof imagen != 'undefined'%>
+    <%let existePrecio = typeof precio != 'undefined'%>
+
+    <%if(existeProducto){%>
+
+        <%existeNombre = true%>
+        <%existeDescripcion = true%>
+        <%existeImagen = true%>
+        <%existePrecio = true%>
+
+        <%nombre = producto.nombre%>
+        <%descripcion = producto.descripcion%>
+        <%imagen = producto.imagen%>
+        <%precio = Number(producto.precio).toFixed(2)%>
+
+    <%}%>
+
+    <div align="center">
+
+        <h1><%= existeProducto? 'Editar Producto':'Agregar Producto'%></h1>
+        <hr>
+
+        <%if(mensaje){%>
+            <div class="alert alert-danger tamanio" role="alert">
+                Mensaje Error: <%= mensaje%>
+            </div>
+        <%}%>
+
+        <form action="<%= existeProducto? '/bioapp/editar/producto/'+producto.id:'/bioapp/agregar/producto'%>" class="was-validated tamanio" method="post">
+
+            <div class="form-group">
+                <label for="nombreId">Nombre</label>
+                <input id="nombreId" type="text"
+                       name="nombre"
+                       placeholder="Nombre del producto"
+                       class="form-control"
+                       value="<%= existeNombre? nombre:''%>"
+                       required>
+                <div class="invalid-feedback">Nombre es necesario</div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="imagenId">Imagen</label>
+                <input id="imagenId" type="text"
+                       name="imagen"
+                       placeholder="URL de la imagen"
+                       class="form-control"
+                       value="<%= existeImagen? imagen:''%>"
+                       required>
+                <div class="invalid-feedback">La Imagen es necesario</div>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcioId">Descripcion</label>
+                <textarea class="form-control" id="descripcioId"
+                          rows="4"
+                          placeholder="Descripcion del producto"
+                          name="descripcion">
+                    <%= existeDescripcion? descripcion:''%></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="precioId">Precio</label>
+                <input id="precioId" type="text"
+                       class="form-control"
+                       placeholder="Precio del producto"
+                       name="precio"
+                       value="<%= existePrecio? precio:''%>"
+                       required>
+                <div class="invalid-feedback">El precio es necesario</div>
+            </div>
+
+
+            <div class="form-group">
+                <select class="custom-select" name="categoria" required>
+                    <option value="">Seleccione categoria</option>
+
+                    <%categoria.forEach((objeto)=>{%>
+                        <option value="<%= objeto.id%>"><%= objeto.nombre%></option>
+                    <% })%>
+                </select>
+                <div class="invalid-feedback">Categoria es necesario</div>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primary"
+                    name="crear">
+                <%= existeProducto?'Editar':'Agregar'%>
+            </button>
+            <a role="button" href="/bioapp/productos" class="btn btn-danger">Cancelar</a>
+
+        </form>
+
+    </div>
+
+
+
+
+</div>

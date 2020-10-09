@@ -1,0 +1,89 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+    <%let ruta=termino%>
+
+    <%if(termino === 'categoria'){%>
+        <%ruta = termino +'/'+producto.categoria.nombre%>
+    <%}else{%>
+        <%if(termino != 'home'){%>
+        <%ruta = 'buscar/producto?query=' + termino %>
+        <%}%>
+    <%}%>
+
+        <div class="row">
+
+            <div class="col-sm-8">
+                <h1><%= producto.nombre%></h1>
+                <br>
+            </div>
+
+            <div class="col-sm-4">
+                <%if(mensaje){%>
+                    <div class="alert alert-primary" role="alert">
+                        <%=mensaje%>
+                    </div>
+                <%}%>
+            </div>
+
+        </div>
+
+
+    <div class="row">
+
+        <div class="col-md-5">
+
+            <img src="<%= producto.imagen%>"
+                 class="img-thumbnail img-fluid"
+                 alt="<%= producto.nombre%>">
+        </div>
+
+
+        <div class="col-md-7">
+
+            <h3>Descripcion</h3>
+            <hr>
+            <p class="text-justify"><%= producto.descripcion%></p>
+
+            <p>Categoria: <span class="badge badge-primary"><%= producto.categoria.nombre%></span>
+            </p>
+            <p>Precio: <span class="badge badge-success">$ <%=Number(producto.precio).toFixed(2)%></span>
+            </p>
+
+            <form action="/bioapp/<%=termino%>/agregar/acarrito/<%= producto.id%>" method="post">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="cantidadID">Cantidad:</label>
+                        <select id="cantidadID" class="custom-select" name="cantidad">
+
+                            <%for(let i=1;i<=12;i++){%>
+                                <option value="<%= i%>"><%= i%></option>
+                            <%}%>
+                        </select>
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <a href="/bioapp/<%= ruta%>" role="button" class="btn btn-danger btn-block">Regresar</a>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary btn-block" type="submit"
+                                onclick="alerta('Se agregara producto')">
+                            Añadir a Carrito
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include('../funcionalidad/mostrar-alerta.ejs')%>

@@ -1,0 +1,78 @@
+<%- include('../estilos/img-estilo')%>
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+
+    <H1>Mascarillas</H1>
+    <hr>
+
+        <div class="card-columns">
+            <%arregloMascarillas.forEach((objeto)=>{%>
+                <div class="card">
+                    <img src="<%=objeto.imagen%>" class="card-img-top" alt="<%= objeto.nombre%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= objeto.nombre%></h5>
+                        <p class="card-text"><%= objeto.descripcion.slice(1,100)%>...</p>
+
+                        <a href="/bioapp/home/producto/<%= objeto.id%>"
+                           class="btn btn-primary btn-block"
+                            role="button">
+                            Ver Mas
+                        </a>
+
+                    </div>
+                </div>
+            <%})%>
+        </div>
+
+    <br>
+    <br>
+    <H1>Guantes</H1>
+    <hr>
+
+
+    <div class="card-columns">
+        <%arregloGuantes.forEach((objeto)=>{%>
+        <div class="card">
+            <img src="<%=objeto.imagen%>" class="card-img-top" alt="<%= objeto.nombre%>">
+            <div class="card-body">
+                <h5 class="card-title"><%= objeto.nombre%></h5>
+                <p class="card-text"><%= objeto.descripcion.slice(0,100)%>...</p>
+
+                <a href="/bioapp/home/producto/<%= objeto.id%>"
+                   class="btn btn-primary btn-block"
+                   role="button">
+                    Ver Mas
+                </a>
+
+            </div>
+        </div>
+        <%})%>
+    </div>
+
+    <br>
+    <br>
+    <H1>Overoles</H1>
+    <hr>
+
+    <div class="card-columns">
+        <%arregloOveroles.forEach((objeto)=>{%>
+        <div class="card">
+            <img src="<%=objeto.imagen%>" class="card-img-top" alt="<%= objeto.nombre%>">
+            <div class="card-body">
+                <h5 class="card-title"><%= objeto.nombre%></h5>
+                <p class="card-text"><%= objeto.descripcion.slice(0,100)%>...</p>
+
+                <a href="/bioapp/home/producto/<%= objeto.id%>"
+                   class="btn btn-primary btn-block"
+                   role="button">
+                    Ver Mas
+                </a>
+
+            </div>
+        </div>
+        <%})%>
+    </div>
+
+
+</div>

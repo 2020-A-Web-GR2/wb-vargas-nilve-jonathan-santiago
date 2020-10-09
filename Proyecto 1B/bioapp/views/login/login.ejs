@@ -1,0 +1,94 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+
+    <%const existeLogin = typeof login != 'undefined'%>
+
+    <h1>Ingresa a BioApp</h1>
+    <hr>
+    <div class="card"  style="width: 80%;" >
+
+        <%if(mensaje){%>
+            <div class="alert alert-danger" role="alert">
+                <%= mensaje%>
+            </div>
+        <%}%>
+
+        <div class="row">
+            <div class="col-md-5" align="center">
+                <br><br>
+
+                <img src="/img/bioapp.png" alt="bioapp">
+            </div>
+
+            <div class="col-md-5">
+
+                <form action="/bioapp/login" class="was-validated" method="post">
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <br><br>
+
+                            <div class="form-group">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="login"
+                                       name="login"
+                                       required
+                                        value="<%= existeLogin? login:''%>">
+
+                                <div class="invalid-feedback">
+                                    login es Necesario
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <input type="password"
+                                       class="form-control"
+                                       placeholder="password"
+                                       name="password"
+                                       required>
+
+                                <div class="invalid-feedback">
+                                    Password es Necesario
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group" align="center">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <button type="submit"
+                                                class="btn btn-primary margin-right btn-block"
+                                                name="button">
+                                            Ingresar
+                                        </button>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <a href="/bioapp/home"
+                                           class="btn btn-danger btn-block"
+                                           role="button">Cancelar</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+<%- include('../compartido/navbar/navbar')%>
+<%- include('../estilos/img-estilo')%>
+<div class="container main-container">
+
+
+    <%if(productosEncontrados.length === 0){%>
+        <div class="alert alert-danger" role="alert">
+            No existe productos
+        </div>
+    <%}%>
+    <div class="card-columns">
+
+        <%productosEncontrados.forEach((objeto)=>{%>
+            <div class="card">
+                <img src="<%= objeto.imagen%>" class="card-img-top" alt="<%= objeto.nombre%>">
+                <div class="card-body">
+                    <h5 class="card-title">"<%= objeto.nombre%>"</h5>
+
+                    <%if(objeto.descripcion != null){%>
+                    <p class="card-text"><%=objeto.descripcion.slice(0,100)%>...</p>
+                    <%}%>
+                    <a href="/bioapp/<%=query%>/producto/<%= objeto.id%>"
+                       class="btn btn-primary btn-block"
+                       role="button">
+                        Ver Mas
+                    </a>
+                </div>
+            </div>
+        <%})%>
+
+    </div>
+
+</div>

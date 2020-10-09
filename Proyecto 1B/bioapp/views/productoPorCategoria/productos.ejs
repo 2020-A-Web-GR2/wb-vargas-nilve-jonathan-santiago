@@ -1,0 +1,92 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+<%const existeMensaje = typeof mensaje != 'undefined'%>
+    <br>
+    <div class="row">
+        <div class="col-sm-5">
+            <h1>Lista de Productos</h1>
+
+        </div>
+    </div>
+    <hr>
+
+    <%if(existeMensaje){%>
+        <div class="alert alert-danger" role="alert">
+            Mensaje: <%= mensaje%>
+        </div>
+    <%}%>
+
+    <div class="row">
+
+        <div class="col-sm-4">
+
+            <form action="/bioapp/productos/encontrados" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"
+                           placeholder="Ingresa para Buscar"
+                           aria-describedby="button-addon2"
+                           name="query">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit" id="button-addon2">Buscar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+        <div class="col-sm-8" align="right">
+            <a href="/bioapp/vista/agregar/producto" role="button" class="btn btn-primary">Crear</a>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <table class="table table-bordered tamanio">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Opciones</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <%arregloProductos.forEach((producto,index)=>{%>
+            <tr>
+                <td><%= index + 1%></td>
+                <td><%= producto.nombre%></td>
+                <td class="tamanio">
+                    <p>
+                        <%= producto.descripcion%>
+                    </p>
+                </td>
+                <td><%= Number(producto.precio).toFixed(2)%></td>
+                <td><%= producto.categoria.nombre%></td>
+                <td>
+
+                    <form action="/bioapp/eliminar/producto/<%=producto.id%>" method="post">
+
+                        <a href="/bioapp/vista/editar/producto/<%= producto.id%>"
+                           role="button" class="btn btn-success btn-sm btn-block">Editar</a>
+
+                        <button class="btn btn-danger btn-sm btn-block" type="submit">Eliminar</button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+
+        <%})%>
+
+        </tbody>
+    </table>
+
+</div>

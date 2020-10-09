@@ -1,0 +1,75 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+
+    <h1 align="center">Editar Mi Compra</h1>
+    <hr>
+
+    <div class="card" style="width: 100%">
+
+        <div class="card-body">
+
+            <h6>Tipo: <span class="badge badge-primary"><%= factura.tipo%></span></h6>
+            <h6>Fecha: <span class="badge badge-primary"><%= factura.fechaHora.toLocaleString()%></span></h6>
+            <h6>Valor a Pagar: <span class="badge badge-primary"><%= Number(factura.precioTotalConIVA).toFixed(2)%></span></h6>
+
+        </div>
+
+    </div>
+
+    <div class="table-responsive-sm">
+
+        <table class="table">
+            <thead class="thead-dark">
+
+            <tr  align="center">
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Opciones</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% factura.detalles.forEach((objeto,index)=>{%>
+                    <tr align="center">
+                        <td><%= index + 1%></td>
+                        <td><%= objeto.descripcion%></td>
+                        <td><%= Number(objeto.precioUnitario).toFixed(2)%></td>
+                        <td id="<%= index%>">
+                            <%= objeto.cantidad%>
+                        </td>
+                        <td>
+                            <form action="/bioapp/eliminar/<%=factura.id%>/detalle/<%= objeto.id%>" method="post">
+                                <button class="btn btn-primary" type="button" onclick="aumentarCantidad(<%=index%>)">+</button>
+                                <button class="btn btn-success" type="button" onclick="disminuirCantidad(<%=index%>)">-</button>
+                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+
+                        </td>
+
+                    </tr>
+                <%})%>
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div align="center">
+
+            <button class="btn btn-primary margin-right"
+                    type="submit">Editar</button>
+
+            <a href="/bioapp/facturas" role="button"
+               class="btn btn-danger">Cancelar</a>
+
+    </div>
+
+</div>
+
+<%- include('../funcionalidad/modificar-cantidad')%>

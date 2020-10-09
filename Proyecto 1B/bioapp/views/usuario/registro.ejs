@@ -1,0 +1,169 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container" >
+
+    <%const existeUsuario = typeof usuarioEncontrado != 'undefined' %>
+
+    <% let existeCedula = typeof cedula != 'undefined' %>
+    <% let existeNombre = typeof nombre != 'undefined' %>
+    <% let existeApellido= typeof apellido != 'undefined' %>
+    <% let existeLogin= typeof login != 'undefined' %>
+    <% let existeCiudad= typeof ciudad != 'undefined' %>
+
+    <%if(existeUsuario){%>
+
+        <% existeNombre = true%>
+        <% existeCedula = true%>
+        <% existeApellido = true%>
+        <% existeLogin = true%>
+        <% existeCiudad = true%>
+
+        <% cedula = usuarioEncontrado.cedula%>
+        <% nombre = usuarioEncontrado.nombre%>
+        <% apellido = usuarioEncontrado.apellido%>
+        <% ciudad = usuarioEncontrado.ciudad%>
+        <% login = usuarioEncontrado.login%>
+
+    <%}%>
+
+    <h1><%= existeUsuario? 'Editar Mi Cuenta':'Registrate en BioApp'%></h1>
+    <hr>
+
+    <div align="center">
+
+        <div class="card"  style="width: 35%;">
+
+            <% if(error !=undefined){%>
+                <div class="alert alert-danger" role="alert">
+                    Mensaje Error: <%= error%>
+                </div>
+            <%}%>
+
+            <form class="was-validated" action="<%= existeUsuario? '/bioapp/editarUsuario/'+usuarioEncontrado.id:'/bioapp/usuario/registrar'%>" method="post">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <br>
+
+                        <div class="form-group">
+
+                            <label for="cedulaID">Cedula</label>
+                            <input id="cedulaID" type="number"
+                                   class="form-control"
+                                   name="cedula"
+                                   placeholder="Cedula 10 digitos"
+                                   required
+                                   value="<%= existeCedula ? cedula : '' %>"
+                                   <%if(existeUsuario){%>
+                                    disabled
+                                   <%}%>>
+
+                            <div class="invalid-feedback">
+                                Cedula es Necesario
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="nombreID">Nombre</label>
+                            <input id="nombreID" type="text"
+                                   class="form-control"
+                                   name="nombre"
+                                   placeholder="Primer nombre"
+                                   required
+                                   value="<%= existeNombre ? nombre : '' %>">
+
+                            <div class="invalid-feedback">
+                                Nombre es Necesario
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="apellidoID">Apellido</label>
+                            <input id="apellidoID" type="text"
+                                   class="form-control"
+                                   name="apellido"
+                                   placeholder="Primer apellido"
+                                   required
+                                   value="<%= existeApellido ? apellido : '' %>">
+
+                            <div class="invalid-feedback">
+                                Apellido es Necesario
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="ciudadID">Ciudad</label>
+                            <input id="ciudadID" type="text"
+                                   class="form-control"
+                                   placeholder="Quito, Guayaquil"
+                                   name="ciudad"
+                                   value="<%= existeCiudad? ciudad:''%>">
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="loginID">Login</label>
+                            <input id="loginID" type="text"
+                                   class="form-control"
+                                   name="login"
+                                   placeholder="Login"
+                                   required
+                                   value="<%= existeLogin ? login : '' %>">
+                            <div class="invalid-feedback">Login es Necesario</div>
+                        </div>
+
+                        <%if(!existeUsuario){%>
+                            <div class="form-group">
+                                <label for="passwordID">Password</label>
+                                <input id="passwordID" type="password"
+                                       class="form-control"
+                                       name="password"
+                                       placeholder="Password"
+                                       required>
+                                <div class="invalid-feedback">Password es Necesario</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="verificarID">Verificar Password</label>
+                                <input id="verificarID" type="password"
+                                       class="form-control"
+                                       name="password2"
+                                       placeholder="Verificar password"
+                                       required>
+                                <div class="invalid-feedback">Password es Necesario</div>
+                            </div>
+                        <%}%>
+
+                        <div class="form-group" align="center">
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <button type="submit"
+                                            class="btn btn-primary margin-right btn-block"
+                                            name="button">
+                                        <%= existeUsuario? 'Editar':'Registrar'%>
+                                    </button>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <a href="/bioapp/home"
+                                       class="btn btn-danger btn-block"
+                                       role="button">Cancelar</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

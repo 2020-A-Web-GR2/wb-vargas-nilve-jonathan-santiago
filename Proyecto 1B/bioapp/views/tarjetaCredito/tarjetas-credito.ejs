@@ -1,0 +1,96 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+    <h1 align="center">Mis Tarjetas <i class="fas fa-credit-card"></i></h1>
+    <hr>
+
+    <%if(error != undefined ){%>
+        <div class="alert alert-danger" role="alert">
+            <%= error%>
+        </div>
+
+    <%}%>
+
+    <%if(arregloTarjetas.length === 0){%>
+        <div class="alert alert-danger" role="alert">
+            No existe registros
+        </div>
+    <%}%>
+    <div class="col text-right">
+        <a href="/bioapp/vistaAgregarTarjeta"
+           class="btn btn-primary"
+           role="button">Agregar</a>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="table-responsive-sm">
+
+                <table class="table">
+                    <thead class="thead-dark">
+
+                    <tr  align="center">
+                        <th scope="col">#</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Numero</th>
+                        <th scope="col">Fecha Caducidad</th>
+                        <th scope="col">CVV</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+
+                    <%if(arregloTarjetas.length > 0){%>
+
+                    <%arregloTarjetas.forEach((objeto,index)=>{%>
+
+                        <tr align="center">
+                            <td><%=index+1%></td>
+                            <td><%= objeto.tipo%></td>
+                            <td><%= objeto.numero%></td>
+                            <td><%= objeto.fechaCaducidad%></td>
+                            <td><%= objeto.cvv%></td>
+
+                            <td>
+                                <form action="/bioapp/eliminarTarjeta/<%= objeto.id%>" method="post">
+                                    <a href="/bioapp/vistaEditar/<%= objeto.id %>"
+                                       class="btn btn-success margin-right"
+                                       role="button">Editar</a>
+
+
+                                        <button type="submit"
+                                                class="btn btn-danger"
+                                                name="button">
+                                            Eliminar
+                                        </button>
+                                </form>
+
+
+
+                            </td>
+                        </tr>
+                        <%})%>
+
+                    <%}%>
+                    </tbody>
+                </table>
+
+
+            </div>
+            <br>
+            <br>
+        </div>
+        <div class="col text-center">
+            <a href="/bioapp/home"
+               class="btn btn-danger"
+               role="button">Regresar</a>
+        </div>
+
+    </div>
+
+</div>

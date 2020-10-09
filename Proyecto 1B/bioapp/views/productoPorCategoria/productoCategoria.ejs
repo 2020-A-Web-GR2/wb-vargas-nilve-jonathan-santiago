@@ -1,0 +1,50 @@
+<%- include('../estilos/img-estilo')%>
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container">
+
+    <%if(categoria){%>
+        <H1><%=categoria%></H1>
+        <hr>
+    <%}%>
+
+    <%if(arregloProductos.length > 0){%>
+
+        <div class="card-columns">
+            <%arregloProductos.forEach((objeto)=>{%>
+
+                <div class="card">
+                <img src="<%=objeto.imagen%>" class="card-img-top" alt="<%= objeto.nombre%>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= objeto.nombre%></h5>
+
+                    <%if(objeto.descripcion != null){%>
+                        <p class="card-text"><%=objeto.descripcion.slice(0,100)%>...</p>
+                    <%}%>
+
+                    <a href="/bioapp/categoria/producto/<%= objeto.id%>"
+                        role="button"
+                        class="btn btn-primary btn-block">
+                        Ver Mas
+                    </a>
+
+                </div>
+            </div>
+            <%})%>
+        </div>
+
+
+    <%}else{%>
+
+        <div class="alert alert-danger" role="alert">
+            No existe Registros
+        </div>
+
+    <%}%>
+
+
+
+
+
+
+</div>

@@ -1,0 +1,97 @@
+<%- include('../funcionalidad-general/jquery.ejs')%>
+<%-include('../estilos-generales/estilos')%>
+
+
+<%const usuarioLogeado = typeof usuario!= 'undefined'%>
+<%const existeRol = typeof rol!= 'undefined'%>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="/bioapp">BioApp</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/bioapp/home">Home
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Categoria
+                </a>
+                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="/bioapp/categoria/Mascarillas">Mascarillas</a>
+                    <a class="dropdown-item" href="/bioapp/categoria/Overoles">Overoles</a>
+                    <a class="dropdown-item" href="/bioapp/categoria/Guantes">Guantes</a>
+                </div>
+
+            </li>
+
+        </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0" action="/bioapp/buscar/producto"  method="get">
+                    <input class="form-control mr-sm-2"
+                           type="search"
+                           placeholder="Search"
+                           aria-label="Search"
+                           name="query">
+
+                    <button class="btn btn-outline-primary btn-sm margin-right"
+                            type="submit">Buscar</button>
+
+                    <%if(!usuarioLogeado){%>
+                        <a href="/bioapp/vista/login"
+                           class="btn btn-outline-primary btn-sm margin-right"
+                           role="button">Login</a>
+
+                        <a href="/bioapp/usuario/vistaRegistro"
+                           class="btn btn-outline-primary btn-sm margin-right"
+                           role="button">Registrate</a>
+                    <%}%>
+
+
+                </form>
+
+            </li>
+
+            <%if(usuarioLogeado){%>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                         aria-labelledby="navbarDropdownMenuLink-333">
+
+                        <a class="dropdown-item" href="/bioapp/micuenta"><i class="fas fa-user"></i> Mi Cuenta</a>
+
+                        <%if(existeRol && rol=='administrador'){%>
+                            <a class="dropdown-item" href="/bioapp/productos"><i class="fab fa-product-hunt"></i> Productos</a>
+                        <%}%>
+
+                        <a class="dropdown-item" href="/bioapp/facturas"><i class="fas fa-cart-plus"></i> Mis Facturas</a>
+                        <a class="dropdown-item" href="/bioapp/vistaTarjetas"><i class="fas fa-credit-card"></i> Mis Tarjetas</a>
+                        <a class="dropdown-item" href="/bioapp/vista/editar/usuario"><i class="fas fa-cog"></i> Configuracion</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/bioapp/logout"><i class="fas fa-times"></i> Salir</a>
+
+                    </div>
+                </li>
+            <%}%>
+
+        </ul>
+    </div>
+</nav>
+
+<%- include('../funcionalidad-general/bootstrap-js')  %>

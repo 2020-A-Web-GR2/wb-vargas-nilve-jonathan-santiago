@@ -1,0 +1,114 @@
+<%- include('../compartido/navbar/navbar')%>
+
+<div class="container main-container" >
+
+
+    <% const existeTarjeta = typeof tarjeta != 'undefined'%>
+
+    <div align="center">
+        <h1><%= existeTarjeta ? 'Editar Tarjeta Credito':'Agregar Tarjeta de Credito'%></h1>
+        <hr>
+
+        <div class="card"  style="width: 40%;">
+
+            <% if(typeof error != 'undefined'){%>
+                <div class="alert alert-danger" role="alert">
+                    Mensaje Error: <%= error%>
+                </div>
+            <%}%>
+
+            <form class="was-validated" action="<%= existeTarjeta ? '/bioapp/editarTarjeta/'+tarjeta.id:'/bioapp/agregarTarjeta'%>" method="post">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <br><br>
+
+                        <div class="form-group">
+                            <label for="tipoID">Seleccione Tipo</label>
+                            <select id="tipoID" class="custom-select"
+                                    name="tipo"
+                                    required>
+                                <option value="<%= existeTarjeta ? tarjeta.tipo:''%>"><%= existeTarjeta ? tarjeta.tipo:'Seleccione Tipo'%></option>
+                                <option value="VISA">VISA</option>
+                                <option value="MasterCard">MasterCard</option>
+                                <option value="American Express">American Express</option>
+                                <option value="Discover">Discover</option>
+                            </select>
+
+                            <div class="invalid-feedback">Tipo es Necesario</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numeroID">Numero</label>
+                            <input id="numeroID" type="number"
+                                   class="form-control"
+                                   name="numero"
+                                   placeholder="Numero de Tarjeta"
+                                   value="<%= existeTarjeta ? tarjeta.numero:''%>"
+                                   required>
+
+                            <div class="invalid-feedback">
+                                Numero es Necesario
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fechaID">Fecha de Caducidad</label>
+                            <input id="fechaID" type="date"
+                                   class="form-control"
+                                   name="fechaCaducidad"
+                                   placeholder="dd-mm-aaaa"
+                                   value="<%= existeTarjeta ? tarjeta.fechaCaducidad:''%>"
+                                   required>
+
+                            <div class="invalid-feedback">
+                                Fecha de caducidad es Necesario
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cvvID">CVV</label>
+                            <input id="cvvID" type="number"
+                                   class="form-control"
+                                   name="cvv"
+                                   placeholder="CVV de la Tarjeta"
+                                   value="<%= existeTarjeta ? tarjeta.cvv:''%>"
+                                   required>
+
+                            <div class="invalid-feedback">
+                                CVV es Necesario
+                            </div>
+                        </div>
+
+                        <div class="form-group" align="center">
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <button type="submit"
+                                            class="btn btn-primary margin-right btn-block"
+                                            name="button">
+                                        <%= existeTarjeta ? 'Editar':'Agregar'%>
+                                    </button>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <a href="/bioapp/vistaTarjetas"
+                                       class="btn btn-danger btn-block"
+                                       role="button">Cancelar</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
