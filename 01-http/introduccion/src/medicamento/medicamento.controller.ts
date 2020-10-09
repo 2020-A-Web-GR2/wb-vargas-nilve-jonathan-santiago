@@ -13,20 +13,24 @@ export class MedicamentoController {
     async mostrarMedicamentos(@Res() res,@Query() parametrosConsulta,@Session() session){
 
         const estaLogeado = session.usuario;
+
         if (estaLogeado) {
 
-            let medicamentos
+            let medicamentosEncontrados
             try {
-                medicamentos =  await this._medicamentoService.mostrar()
+                medicamentosEncontrados =  await this._medicamentoService.mostrar(parametrosConsulta.buscar)
             }catch (e) {
+                console.log(e)
                 throw new InternalServerErrorException({
                     mensaje:'Error del servidor'
+
                 })
+
             }
 
-            if(medicamentos){
+            if(medicamentosEncontrados){
                 return res.render('medicamento/lista',{
-                    arregloMedicamentos:medicamentos,
+                    arregloMedicamentos:medicamentosEncontrados,
                     mensaje:parametrosConsulta.mensaje,
                     usuario:session.usuario
                 })

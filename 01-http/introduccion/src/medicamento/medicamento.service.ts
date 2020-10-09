@@ -1,23 +1,32 @@
 import {Injectable} from "@nestjs/common";
 import {InjectRepository} from "@nestjs/typeorm";
 import {MedicamentoEntity} from "./medicamento.entity";
-import {Repository} from "typeorm";
-import {UsuarioEntity} from "../usuario/usuario.entity";
+import {FindManyOptions, Like, Repository} from "typeorm";
 
 @Injectable()
 export class MedicamentoService {
 
     constructor(
         @InjectRepository(MedicamentoEntity)
-        private repositorio:Repository<UsuarioEntity>) {
+        private repositorio:Repository<MedicamentoEntity>) {
     }
 
     crear(medicamento:MedicamentoEntity){
         return this.repositorio.save(medicamento)
     }
 
-    mostrar(){
-        return this.repositorio.find()
+    mostrar(textoConsulta?:string){
+        const consulta: FindManyOptions<MedicamentoEntity> = {
+            where:[
+                {
+                    nombre:Like(`%${textoConsulta}%`)
+                },{
+                    descripcion:Like(`%${textoConsulta}%`)
+                }
+            ]
+        }
+
+        return this.repositorio.find(consulta)
     }
 
     editar(medicamento:MedicamentoEntity){

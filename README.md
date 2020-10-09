@@ -50,6 +50,15 @@ $npm install ejs
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Instalar sessiones
+```
+$npm install express-session
+$npm install session-file-store
+```
+
+
 ESTILOS
 
 por id

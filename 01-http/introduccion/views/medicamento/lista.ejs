@@ -25,7 +25,30 @@
         </div>
     <%}%>
 
-    <a href="/medicamento/vista/crear" role="button" class="btn btn-primary">Crear</a>
+    <div class="row">
+
+        <div class="col-sm-4">
+
+            <form action="/medicamento" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"
+                           placeholder="Ingresa para Buscar"
+                           aria-describedby="button-addon2"
+                            name="buscar">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit" id="button-addon2">Buscar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+        <div class="col-sm-8" align="right">
+            <a href="/medicamento/vista/crear" role="button" class="btn btn-primary">Crear</a>
+        </div>
+
+    </div>
 
     <br><br>
 

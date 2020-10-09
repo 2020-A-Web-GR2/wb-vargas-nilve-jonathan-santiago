@@ -3352,8 +3352,8 @@
         "affectsGlobalScope": false
       },
       "../src/medicamento/medicamento.service.ts": {
-        "version": "97bda9a153392d80aa04790e9882fa83da01f16b07f0e27b24aa7e8c481d4b60",
-        "signature": "ddf44ee9c9e7eccc2c9764ad03cdf256463b93483164c0d456751d5e7c4aa195",
+        "version": "e6f760b93628149bb1ff144839df21db6ce4fa0e20bb14a082b3ade4733b6d90",
+        "signature": "276932f351a36ca7644bf3554d29b8c3cd3091d86c685f3a04fd6c0f5ed7897f",
         "affectsGlobalScope": false
       },
       "../src/medicamento/dto/medicamento.dto.ts": {
@@ -3362,7 +3362,7 @@
         "affectsGlobalScope": false
       },
       "../src/medicamento/medicamento.controller.ts": {
-        "version": "1690bad132e8bfaa54dfc4c928bcf35a9c028d00cb2cb380efea57e5f2304048",
+        "version": "59175f2b0e2d4686ddcfeda5f87e2f979bfbcadf5d5a26c5ccd2b0024aa0d99a",
         "signature": "c63009e60f6cd3f89adb2da0ad009c8bd281ecc964cb8b848e68de0a798ade0f",
         "affectsGlobalScope": false
       },
@@ -11584,8 +11584,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../src/medicamento/medicamento.entity.ts",
-        "../src/usuario/usuario.entity.ts"
+        "../src/medicamento/medicamento.entity.ts"
       ],
       "../src/usuario/dto/usuario.create-dto.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -18987,8 +18986,7 @@
       ],
       "../src/medicamento/medicamento.service.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/medicamento/medicamento.entity.ts",
-        "../src/usuario/usuario.entity.ts"
+        "../src/medicamento/medicamento.entity.ts"
       ],
       "../src/usuario/usuario.controller.ts": [
         "../node_modules/class-validator/types/index.d.ts",
